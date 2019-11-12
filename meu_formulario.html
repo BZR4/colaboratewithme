@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function calcularTrinagulo() {
+            let a = parseInt(document.getElementById('valor_a').value)
+            let b = parseInt(document.getElementById('valor_b').value)
+            let c = parseInt(document.getElementById('valor_c').value)
+            
+            let resultado = document.getElementById('resultado')
+
+            if(a < b+c && b < a+c && c < a+b){
+                if(a == b && b == c){
+                    resultado.innerHTML = 'Triangulo Equilátero'
+                }else{
+                    if(a == b || a == c || b == c){
+                        resultado.innerHTML = 'Triangulo Isósceles'
+                    }else{
+                        resultado.innerHTML = 'Triangulo Escaleno'
+                    }
+                }
+            }else{
+                alert('Não form atriangulo')
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Calculadora Triangulo 0.1</h2>
+    <form action="#">
+        <table>
+            <tr>
+                <th>Valor A</th>
+                <td>
+                    <input type="text" name="valor_a" id="valor_a" size="10">
+                </td>
+            </tr>
+            <tr>
+                <th>Valor B</th>
+                <td>
+                    <input type="text" name="valor_b" id="valor_b" size="10">
+                </td>
+            </tr>
+            <tr>
+                <th>Valor C</th>
+                <td>
+                    <input type="text" name="valor_c" id="valor_c" size="10">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Somar" onclick="calcularTrinagulo()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p id="resultado"></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
